@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Home</a>
+          <a class="nav-link" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="#">About</a>
@@ -20,14 +20,20 @@
                 <a class="dropdown-item" routerLink="/products/{{category}}">{{category}}</a>
                 <div class="dropdown-divider"></div>
             </div>
-            <a class="dropdown-item" routerLink="/products/all">all products</a>
+            <a class="dropdown-item" routerLink="/products/all">All products</a>
           </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/login">logIn</a>
+        <li *ngIf="!(afAuth.user | async)" class="nav-item">
+            <a class="nav-link" routerLink="/login">LogIn</a>
+        </li>
+        <li *ngIf="!(afAuth.user | async)" class="nav-item">
+            <a class="nav-link" routerLink="/register">Sign Up</a>
+        </li>
+        <li *ngIf="(afAuth.user | async)" class="nav-item">
+            <a class="nav-link" (click)="logout()">Log Out</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="#">My account</a>
+            <a class="nav-link" routerLink="/dashboard">Dashboard</a>
         </li>
       </ul>
     </div>

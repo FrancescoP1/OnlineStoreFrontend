@@ -13,6 +13,14 @@ export class ApiService {
      }
     public getAllProductCategories() : Observable<Category[]> {
         let url = 'https://fakestoreapi.com/products/categories';
-        return this.httpClient.get<Category[]>(url);
+        return this.httpClient.get<any>(url);
+    }
+
+    public logInUser(user: String, pass: String): Observable<any> {
+        //console.log("logInUser method started!");
+        let url = 'https://fmi-fakeapi-proxy.herokuapp.com/https://fakestoreapi.com/auth/login';
+        //console.log("inside")
+        //console.log(JSON.stringify({username: user, password:pass}));
+        return this.httpClient.post<any>(url, JSON.stringify({'username': user, 'password':pass}));
     }
 }

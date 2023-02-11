@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ApiService } from '../service/apiservice';
 import { Category } from '../model/Category';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +10,7 @@ import { Category } from '../model/Category';
 })
 export class NavbarComponent implements OnInit {
   categories!: Category[];
-
-  constructor(private apiService: ApiService) { 
+  constructor(private apiService: ApiService, public afAuth: AngularFireAuth) { 
   
   }
 
@@ -24,6 +24,10 @@ export class NavbarComponent implements OnInit {
     for(var name of this.categories) {
         console.log(name);
     }
+  }
+
+  logout(): void {
+    this.afAuth.signOut();
   }
 
 }
