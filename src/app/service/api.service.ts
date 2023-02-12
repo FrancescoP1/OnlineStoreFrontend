@@ -22,6 +22,10 @@ export class ApiService {
         return this.httpClient.get<Product[]>(environment.apiProductsUrl);
     }
 
+    public getProductById(id: number): Observable<Product> {
+        return this.httpClient.get<Product>(environment.apiProductsUrl + "/${id}")
+    }
+
     public logInUser(user: String, pass: String): Observable<any> {
         //console.log("logInUser method started!");
         let url = 'https://fmi-fakeapi-proxy.herokuapp.com/https://fakestoreapi.com/auth/login';

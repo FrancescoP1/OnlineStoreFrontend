@@ -11,7 +11,6 @@ import { ApiService } from './service/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -23,8 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListProductsComponent } from './list-products/list-products.component';
 import { ProductcardComponent } from './productcard/productcard.component';
 import { RatingcompComponent } from './ratingcomp/ratingcomp.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -51,7 +49,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatIconModule,
     AngularFireAuthModule,
-    NgbModule
+    NgbRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
