@@ -18,12 +18,16 @@ export class ApiService {
         return this.httpClient.get<any>(url);
     }
 
-    public getAllProducts(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>(environment.apiProductsUrl);
+    public getAllProducts(numberOfProducts = -1): Observable<Product[]> {
+        if(numberOfProducts == -1) {
+            return this.httpClient.get<Product[]>(environment.apiProductsUrl);
+        }
+        return this.httpClient.get<Product[]>(environment.apiProductsUrl + '?limit=' + numberOfProducts)
     }
 
+
     public getProductById(id: number): Observable<Product> {
-        return this.httpClient.get<Product>(environment.apiProductsUrl + "/${id}")
+        return this.httpClient.get<Product>(environment.apiProductsUrl + "/" + id);
     }
 
     public logInUser(user: String, pass: String): Observable<any> {

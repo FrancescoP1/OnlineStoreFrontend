@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,12 +17,16 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListProductsComponent } from './list-products/list-products.component';
 import { ProductcardComponent } from './productcard/productcard.component';
 import { RatingcompComponent } from './ratingcomp/ratingcomp.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     ListProductsComponent,
     ProductcardComponent,
-    RatingcompComponent
+    RatingcompComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,10 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatIconModule,
     AngularFireAuthModule,
-    NgbRatingModule
+    NgbRatingModule,
+    NgbModule,
+    CommonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
