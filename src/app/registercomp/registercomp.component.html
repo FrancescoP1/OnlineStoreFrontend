@@ -1,0 +1,37 @@
+  <mat-card class="loginform">
+    <mat-card-header>
+        <mat-card-title>Sign Up</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+            <p>
+              <mat-form-field appearance="fill">
+                  <mat-label>Enter your full name</mat-label>
+                  <input autocomplete="off" formControlName="displayName" type="text" matInput placeholder="Your name">
+              </mat-form-field>
+            </p>
+  
+            <p>
+              <mat-form-field appearance="fill">
+                  <mat-label>Enter your email</mat-label>
+                  <input autocomplete="off" formControlName="email" type="email" matInput placeholder="Your email">
+              </mat-form-field>
+            </p>
+  
+            <p>
+              <mat-form-field appearance="fill">
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" matInput placeholder="Your password">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+            </p>
+            <button mat-raised-button color="primary">Sign Up</button>
+        </form>
+    </mat-card-content>
+  </mat-card>
+  <div *ngIf="fireBaseErrorMessage != ''" class="alert alert-danger">
+    <span>{{fireBaseErrorMessage}}</span>
+  </div>

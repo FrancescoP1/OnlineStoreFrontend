@@ -1,0 +1,21 @@
+<header class="bg-light py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-50 mb-0">With General Mag</p>
+        </div>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="row">
+            <div class="col-4" *ngFor="let product of products">
+                <app-productcard [product]="product"></app-productcard>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
