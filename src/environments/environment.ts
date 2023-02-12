@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "frontend-5d02d.appspot.com",
     messagingSenderId: "316412274303",
     appId: "1:316412274303:web:2efe0efa605163da34414a"
-  }
+  },
+  apiProductsUrl: "https://fakestoreapi.com/products"
 };
 
 /*

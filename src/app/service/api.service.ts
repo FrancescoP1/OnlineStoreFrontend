@@ -3,6 +3,8 @@ import { Injectable } from "@angular/core";
 import { Category } from "../model/Category";
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry,  toArray} from 'rxjs/operators';
+import { Product } from "../model/Product";
+import { environment } from "src/environments/environment";
 
 @Injectable({
     providedIn: 'root'
@@ -14,6 +16,10 @@ export class ApiService {
     public getAllProductCategories() : Observable<Category[]> {
         let url = 'https://fakestoreapi.com/products/categories';
         return this.httpClient.get<any>(url);
+    }
+
+    public getAllProducts(): Observable<Product[]> {
+        return this.httpClient.get<Product[]>(environment.apiProductsUrl);
     }
 
     public logInUser(user: String, pass: String): Observable<any> {

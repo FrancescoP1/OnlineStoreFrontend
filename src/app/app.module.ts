@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LogincompComponent } from './logincomp/logincomp.component';
 import { RegistercompComponent } from './registercomp/registercomp.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './service/apiservice';
+import { ApiService } from './service/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +20,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListProductsComponent } from './list-products/list-products.component';
+import { ProductcardComponent } from './productcard/productcard.component';
+import { RatingcompComponent } from './ratingcomp/ratingcomp.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,7 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LogincompComponent,
     RegistercompComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    ListProductsComponent,
+    ProductcardComponent,
+    RatingcompComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatInputModule,
     MatIconModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

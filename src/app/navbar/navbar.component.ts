@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { ApiService } from '../service/apiservice';
+import { ApiService } from '../service/api.service';
 import { Category } from '../model/Category';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
